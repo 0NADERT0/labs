@@ -1,0 +1,23 @@
+from fastapi import FastAPI
+from pydantic import BaseModel
+
+app = FastAPI()
+
+@app.get("/first/second1")
+def sum(first:int,second1:int):
+    return first + second1
+
+@app.get("/first/second2")
+def multiplication(first:int,second2:int):
+    return first * second2
+
+@app.get("/first/second3")
+def subtraction(first:int,second3:int):
+    return first - second3
+
+@app.get("/first/second4")
+def div(first:int,second4:int):
+    if second4 == 0:
+        return "error"
+    else:
+        return first / second4
